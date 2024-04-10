@@ -122,14 +122,14 @@ class Level(pg.sprite.Sprite):
             rect_y = HEIGHT // 3
             
             for letter in range(4):
-                # Bouncing
+                # Bouncing across screen
                 if x_motion >= END + 60:
                     self.image = self.anim[scene][letter]
                     self.rect = self.image.get_rect()
                     self.rect.x = x_motion + rect_x
                     self.rect.y = rect_y + self.bounce(x_motion + rect_x // 4)
                     # self.rect.y = rect_y
-                # Bumping
+                # Smashing into each other
                 elif x_motion < END + 15:
                     match letter:
                         case 0:
