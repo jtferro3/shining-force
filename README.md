@@ -6,7 +6,7 @@ My nephew was learning Python in school, and he asked for my assistance to under
 I am attempting to create a Python game framework that not only re-creates "Shining Force" but can equally play other games using this framework. I settled on implementing the framework by providing main, level, and asset files. For example: the main file loads each level's gameplay which loads each levels background and character images.</br>
 I have developed my "Shining Force" game with Python 3.11. I currently only have the Sega logo, Introduction, and Level 1 map with a moveable animated Max character. I need to create the other characters, their interactions, and the rest of the levels.</p>
 
-<p><b>How to install and run the project:</b></br>
+<p><h2>How to install and run the project:</h2></br>
 After installing Python, Pygame, and Pytmx:</br>
 cd to your development directory.</br>
 <code>cd /path/to/development</code></br>
@@ -15,16 +15,16 @@ download git files</br>
 <code>cd /path/to/shining-force</code></br>
 <code>python3 main.py</code></br>
 
-<p><b>Credits:</b></br>
+<p><h2>Credits:</h2></br>
 John T. Ferro, III https://github.com/jtferro3</p>
 
-<p>Helpful tutorials:</br>
+<p><b>Helpful tutorials:</b></br>
 Kidscancode: https://www.youtube.com/watch?v=3UxnelT9aCo&list=PLsk-HSGFjnaGQq7ybM8Lgkh5EMxUWPm2i</br>
 Real Python: https://realpython.com/pygame-a-primer</br>
 The Spriters Resource: https://www.spriters-resource.com/genesis_32x_scd/sf1/</br>
 Video Game Music Archive: http://www.vgmusic.com/music/console/sega/genesis/</p>
 
-<p><b>License:</b></br>
+<p><h2>License:</h2></br>
 MIT License</p>
 
 <p>Copyright (c) 2024 John T. Ferro, III</p>
