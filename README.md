@@ -1,7 +1,7 @@
 <p><h1>SHINING FORCE</h1></br>
 is my attempt at learning to program the Sega Genesis "Shining Force" game in Python.</p>
 
-<p><b>Description:</b></br>
+<p><h2>Description:</h2></br>
 My nephew was learning Python in school, and he asked for my assistance to understand Python. He explained that he'd really like to write a game like "Shining Force." So naturally I had to brush-up on my Python game programming, so I wouldn't lose the highly coveted title as "Worlds Greatest Uncle." I found several good online tutorials that gave me an excellent background in Python games.</br>
 I am attempting to create a Python game framework that not only re-creates "Shining Force" but can equally play other games using this framework. I settled on implementing the framework by providing main, level, and asset files. For example: the main file loads each level's gameplay which loads each levels background and character images.</br>
 I have developed my "Shining Force" game with Python 3.11. I currently only have the Sega logo, Introduction, and Level 1 map with a moveable animated Max character. I need to create the other characters, their interactions, and the rest of the levels.</p>
@@ -20,8 +20,8 @@ John T. Ferro, III https://github.com/jtferro3</p>
 
 <p>Helpful tutorials:</br>
 Kidscancode: https://www.youtube.com/watch?v=3UxnelT9aCo&list=PLsk-HSGFjnaGQq7ybM8Lgkh5EMxUWPm2i</br>
-Real Python: https://realpython.com/pygame-a-primer
-The Spriters Resource: https://www.spriters-resource.com/genesis_32x_scd/sf1/
+Real Python: https://realpython.com/pygame-a-primer</br>
+The Spriters Resource: https://www.spriters-resource.com/genesis_32x_scd/sf1/</br>
 Video Game Music Archive: http://www.vgmusic.com/music/console/sega/genesis/</p>
 
 <p><b>License:</b></br>
