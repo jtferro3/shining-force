@@ -1,4 +1,4 @@
-<p><h1>SHINING FORCE</h1></br>
+<p><h1>SHINING FORCE</h1>
 is my attempt at learning to program the Sega Genesis "Shining Force" game in Python.</p>
 
 <p><h2>Description:</h2></br>
