@@ -166,137 +166,12 @@ class Game:
 
         self.level.logo(0)
 
-        # self.level.scene(1, 0, 6, True)
-        # self.level.scene(2, 0, 1, False)
-        # self.level.scene(3, 6, 10, True)
-        # self.level.scene(4, 10, 12, True)
-        # self.level.scene(5, 12, 16, True)
-        # self.level.scene(6, 16, 24, True)
-        
-        # for i in range(0, 6, 2):
-        #     count = 0
-        #     while count < len(self.level.text[i]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(0)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         count += 1
-        #         pg.display.flip()
-        #     count = 0
-        #     while count < len(self.level.text[i + 1]) + 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(0)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         self.draw_text(self.level.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-        #         count += 1
-        #         pg.display.flip()
-        # for _ in range(1):
-        #     count = 0
-        #     while count < len(self.level.anim[1]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(1)
-        #         self.level.draw()
-        #         count += 1
-        #         pg.display.flip()
-        
-        # for i in range(6, 10, 2):
-        #     count = 0
-        #     while count < len(self.level.text[i]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(2)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         count += 1
-        #         pg.display.flip()
-        #     count = 0
-        #     while count < len(self.level.text[i + 1]) + 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(2)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         self.draw_text(self.level.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-        #         count += 1
-        #         pg.display.flip()
-        
-        # for i in range(10, 12, 2):
-        #     count = 0
-        #     while count < len(self.level.text[i]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(3)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         count += 1
-        #         pg.display.flip()
-        #     count = 0
-        #     while count < len(self.level.text[i + 1]) + 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(3)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         self.draw_text(self.level.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-        #         count += 1
-        #         pg.display.flip()
-                
-        # for i in range(12, 16, 2):
-        #     count = 0
-        #     while count < len(self.level.text[i]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(4)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         count += 1
-        #         pg.display.flip()
-        #     count = 0
-        #     while count < len(self.level.text[i + 1]) + 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(4)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         self.draw_text(self.level.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-        #         count += 1
-        #         pg.display.flip()
-                
-        # for i in range(16, 24, 2):
-        #     count = 0
-        #     while count < len(self.level.text[i]):
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(5)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         count += 1
-        #         pg.display.flip()
-        #     count = 0
-        #     while count < len(self.level.text[i + 1]) + 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(5)
-        #         self.level.draw()
-        #         self.draw_text(self.level.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-        #         self.draw_text(self.level.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-        #         count += 1
-        #         pg.display.flip()
-        
-        # for _ in range(1):
-        #     count = 0
-        #     while count < 75:
-        #         self.clock.tick(FPS2)
-        #         self.screen.fill(BLACK)
-        #         self.level.update(7)
-        #         self.level.draw()
-        #         pg.draw.rect(self.screen, BLACK, (0, WIDTH / 2 - 10, WIDTH, 40))
-        #         count += 1
-        #         pg.display.flip()
+        self.level.scene(1, 0, 6, True)
+        self.level.scene(2, 0, 1, False)
+        self.level.scene(3, 6, 10, True)
+        self.level.scene(4, 10, 12, True)
+        self.level.scene(5, 12, 16, True)
+        self.level.scene(6, 16, 24, True)
         
         count = 0        
         playing = True
@@ -323,7 +198,7 @@ class Game:
             count += 1
             pg.display.flip()
     
-    def show_go_screen(self):
+    def show_gameover_screen(self):
         pass
 
 # call the "main" function if running this script
@@ -334,4 +209,4 @@ if __name__ == "__main__":
     while True:
         g.new()
         g.run()
-        g.show_go_screen()
+        g.show_gameover_screen()

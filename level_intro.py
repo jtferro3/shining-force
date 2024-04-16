@@ -186,26 +186,26 @@ class Level(pg.sprite.Sprite):
     
     def scene(self, index, start, end, is_text):
         for i in range(start, end, 2):
-            count = 0
-            while count < len(self.text[i]):
+            frame = 0
+            while frame < len(self.text[i]):
                 self.game.clock.tick(FPS)
                 self.game.screen.fill(BLACK)
                 self.update(index)
                 self.draw()
                 if is_text:
-                    self.game.draw_text(self.text[i][:count], 64, WHITE, 25, HEIGHT * 3 / 4)
-                count += 1
+                    self.game.draw_text(self.text[i][:frame], 64, WHITE, 25, HEIGHT * 3 / 4)
+                frame += 1
                 pg.display.flip()
-            count = 0
-            while count < len(self.text[i + 1]) + 75:
+            frame = 0
+            while frame < len(self.text[i + 1]) + 75:
                 self.game.clock.tick(FPS)
                 self.game.screen.fill(BLACK)
                 self.update(index)
                 self.draw()
                 if is_text:
                     self.game.draw_text(self.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-                    self.game.draw_text(self.text[i + 1][:count], 64, WHITE, 25, HEIGHT * 13 / 16)
-                count += 1
+                    self.game.draw_text(self.text[i + 1][:frame], 64, WHITE, 25, HEIGHT * 13 / 16)
+                frame += 1
                 pg.display.flip()
 
     def bounce(self, index: int) -> int:
