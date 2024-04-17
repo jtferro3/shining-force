@@ -94,7 +94,7 @@ class Level(pg.sprite.Sprite):
     def animate(self, scene):
         number_of_frames = len(self.anim[scene])
         now = pg.time.get_ticks()
-        if now - self.last_update > 125:
+        if now - self.last_update > 128:
             if self.current_frame > number_of_frames:
                 self.current_frame = 0
             
@@ -184,30 +184,6 @@ class Level(pg.sprite.Sprite):
             pg.display.flip()
         time.sleep(5)
     
-    def scene(self, index, start, end, is_text):
-        for i in range(start, end, 2):
-            frame = 0
-            while frame < len(self.text[i]):
-                self.game.clock.tick(FPS)
-                self.game.screen.fill(BLACK)
-                self.update(index)
-                self.draw()
-                if is_text:
-                    self.game.draw_text(self.text[i][:frame], 64, WHITE, 25, HEIGHT * 3 / 4)
-                frame += 1
-                pg.display.flip()
-            frame = 0
-            while frame < len(self.text[i + 1]) + 75:
-                self.game.clock.tick(FPS)
-                self.game.screen.fill(BLACK)
-                self.update(index)
-                self.draw()
-                if is_text:
-                    self.game.draw_text(self.text[i], 64, WHITE, 25, HEIGHT * 3 / 4)
-                    self.game.draw_text(self.text[i + 1][:frame], 64, WHITE, 25, HEIGHT * 13 / 16)
-                frame += 1
-                pg.display.flip()
-
     def bounce(self, index: int) -> int:
         y: int
         mod_limit: int = 60
@@ -219,7 +195,50 @@ class Level(pg.sprite.Sprite):
         y = (mod * mod_amp)
         return y
 
+    def scene(self, index, start, end, is_text):
+        for frame in range(start, end, 2):
+            first_line = len(self.text[frame])
+            second_line = len(self.text[frame + 1])
+            delay = 45 # 3 second delay (3 * 15 frames)
+            lines = first_line + second_line + delay
+            for letter in range(lines):
+                self.game.clock.tick(FPS)
+                self.game.screen.fill(BLACK)
+                self.update(index)
+                self.draw()
+                if is_text:
+                    if letter < first_line:
+                        self.game.draw_text(self.text[frame][:letter], 64, WHITE, 25, HEIGHT * 3 / 4)
+                    elif letter >= first_line:
+                        self.game.draw_text(self.text[frame], 64, WHITE, 25, HEIGHT * 3 / 4)
+                        self.game.draw_text(self.text[frame + 1][:letter - first_line], 64, WHITE, 25, HEIGHT * 13 / 16)
+                pg.display.flip()
+    
+    def press_start(self, index):
+        count = 0        
+        playing = True
+        while playing:
+            for event in pg.event.get():
+                if event.type == pg.QUIT:
+                    playing = False
+                    self.running = False
+                    self.quit()
+                if event.type == pg.KEYUP:
+                    playing = False
+            self.game.clock.tick(FPS)
+            self.game.screen.fill(BLACK)
+            self.update(index)
+            self.draw()
+            
+            # Alternate hiding PRESS START TO PLAY
+            if (count % FPS) >= FPS//2:
+                pg.draw.rect(self.game.screen, BLACK, (0, WIDTH / 2 - 10, WIDTH, 40))
+            
+            count += 1
+            pg.display.flip()
+
 # call the "main" function if running this script
 if __name__ == "__main__":
     for i in range(60):
         print(Level.bounce(Level, i))
+    

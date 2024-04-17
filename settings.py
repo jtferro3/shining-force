@@ -14,7 +14,7 @@ ALPHA = (100, 1, 99)
 # game settings
 WIDTH = 720   # 16 * 64 or 32 * 32 or 64 * 16
 HEIGHT = 656  # 16 * 48 or 32 * 24 or 64 * 12
-FPS = 30
+FPS = 15
 FPS2 = 30
 FONT_NAME = 'ariel'
 SPRITESHEET = 'sf1_spritesheet.png'

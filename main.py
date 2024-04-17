@@ -10,8 +10,8 @@ Play the Sega Genesis game Shining Force re-imagined with Python.
 
 Controls
 --------
-* Left, Right, Up, and Down arrows to move.
-* Space to interact
+* Left, Right, Up, and Down arrows to move and select.
+* Space to interact.
 
 """
 import pygame as pg
@@ -166,38 +166,15 @@ class Game:
 
         self.level.logo(0)
 
-        self.level.scene(1, 0, 6, True)
-        self.level.scene(2, 0, 1, False)
-        self.level.scene(3, 6, 10, True)
-        self.level.scene(4, 10, 12, True)
-        self.level.scene(5, 12, 16, True)
-        self.level.scene(6, 16, 24, True)
+        # self.level.scene(1, 0, 6, True)
+        # self.level.scene(2, 0, 1, False)
+        # self.level.scene(3, 6, 10, True)
+        # self.level.scene(4, 10, 12, True)
+        # self.level.scene(5, 12, 16, True)
+        # self.level.scene(6, 16, 24, True)
         
-        count = 0        
-        playing = True
-        while playing:
-            for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    playing = False
-                    self.running = False
-                    self.quit()
-                if event.type == pg.KEYUP:
-                    playing = False
-            self.clock.tick(FPS)
-            self.screen.fill(BLACK)
-            
-            self.level.update(7)
-            self.level.draw()
-            
-            # Alternate hiding PRESS START TO PLAY
-            if count %  30 >= 15:
-                pg.draw.rect(self.screen, BLACK, (0, WIDTH / 2 - 10, WIDTH, 40))
-            else:
-                pg.draw.rect(self.screen, BLACK, (0, WIDTH / 2 - 10, 20, 40))
-            
-            count += 1
-            pg.display.flip()
-    
+        self.level.press_start(7)
+
     def show_gameover_screen(self):
         pass
 
