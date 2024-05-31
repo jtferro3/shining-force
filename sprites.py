@@ -1,6 +1,7 @@
 import os
 import pygame as pg
 from settings import *
+from characters import *
 
 class Spritesheet:
     # utility class for loading and parsing spritesheets
@@ -16,12 +17,13 @@ class Spritesheet:
         return image
 
 class Player(pg.sprite.Sprite):
-    def __init__(self, game, x, y):
+    def __init__(self, game, x, y, character):
         self.groups = game.all_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.x = x
         self.y = y
+        self.character = character
         self.facing = 0
         self.vel = vec(0, 0)
         self.current_frame = 0
@@ -30,16 +32,16 @@ class Player(pg.sprite.Sprite):
         self.load_images()
     
     def load_images(self):
-        self.anim = [self.game.spritesheet.get_image(0, 0, 24, 24),
-                     self.game.spritesheet.get_image(24, 0, 24, 24),
-                     self.game.spritesheet.get_image(48, 0, 24, 24),
-                     self.game.spritesheet.get_image(72, 0, 24, 24),
-                     pg.transform.flip(self.game.spritesheet.get_image(48, 0, 24, 24), True, False),
-                     pg.transform.flip(self.game.spritesheet.get_image(72, 0, 24, 24), True, False),
-                     self.game.spritesheet.get_image(96, 0, 24, 24),
-                     self.game.spritesheet.get_image(120, 0, 24, 24),
-                     self.game.spritesheet.get_image(290, 0, 24, 24),
-                     self.game.spritesheet.get_image(314, 0, 24, 24)]
+        self.anim = [self.game.spritesheet.get_image(*self.character[0]),
+                     self.game.spritesheet.get_image(*self.character[1]),
+                     self.game.spritesheet.get_image(*self.character[2]),
+                     self.game.spritesheet.get_image(*self.character[3]),
+                     pg.transform.flip(self.game.spritesheet.get_image(*self.character[4]), True, False),
+                     pg.transform.flip(self.game.spritesheet.get_image(*self.character[5]), True, False),
+                     self.game.spritesheet.get_image(*self.character[6]),
+                     self.game.spritesheet.get_image(*self.character[7]),
+                     self.game.spritesheet.get_image(*self.character[8]),
+                     self.game.spritesheet.get_image(*self.character[9])]
     
     def collide_with_walls(self, dir):
         if dir == 'x':
