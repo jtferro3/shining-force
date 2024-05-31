@@ -58,7 +58,7 @@ class Game:
         
         for tile_object in self.map.tmxdata.objects:
             if tile_object.name == 'player':
-                self.player = Player(self, tile_object.x, tile_object.y, character_max)
+                self.player = Player(self, tile_object.x, tile_object.y, pc_max_n)
             if tile_object.name == 'wall':
                 Obstacle(self, tile_object.x, tile_object.y, tile_object.width, tile_object.height)
         
@@ -166,12 +166,12 @@ class Game:
 
         self.level.logo(0)
 
-        self.level.scene(1, 0, 6, True)
-        self.level.scene(2, 0, 1, False)
-        self.level.scene(3, 6, 10, True)
-        self.level.scene(4, 10, 12, True)
-        self.level.scene(5, 12, 16, True)
-        self.level.scene(6, 16, 24, True)
+        # self.level.scene(1, 0, 6, True)
+        # self.level.scene(2, 0, 1, False)
+        # self.level.scene(3, 6, 10, True)
+        # self.level.scene(4, 10, 12, True)
+        # self.level.scene(5, 12, 16, True)
+        # self.level.scene(6, 16, 24, True)
         
         self.level.press_start(7)
 
