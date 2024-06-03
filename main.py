@@ -73,34 +73,6 @@ class Game:
             self.update()
             self.draw()
 
-    def quit(self):
-        pg.quit()
-        sys.exit()
-
-    def update(self):
-        # update portion of the game loop
-        self.all_sprites.update()
-        self.camera.update(self.player)
-    
-    def draw_grid(self):
-        for x in range(0, WIDTH, TILESIZE):
-            pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, HEIGHT))
-        for y in range(0, HEIGHT, TILESIZE):
-            pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
-
-    def draw(self):
-        # Draw background
-        self.screen.blit(self.map.image, self.camera.apply_rect(self.map.rect))
-        
-        # Draw grid
-        self.draw_grid()
-        
-        # Draw sprites
-        for sprite in self.all_sprites:
-            self.screen.blit(sprite.image, self.camera.apply(sprite))
-        
-        pg.display.flip()
-
     def events(self):
         # catch all events here
         for event in pg.event.get():
@@ -122,13 +94,33 @@ class Game:
                     self.player.facing = 0
                     self.player.vel.y = PLAYER_SPEED
 
-    def load_image(self, file, alpha):
-        """loads an image, prepares it for play"""
-        try:
-            surface = pg.image.load(file)
-        except pg.error:
-            raise SystemExit(f'Could not load image "{file}" {pg.get_error()}')
-        return surface.convert_alpha() if alpha else surface.convert()
+    def update(self):
+        # update portion of the game loop
+        self.all_sprites.update()
+        self.camera.update(self.player)
+    
+    def draw(self):
+        # Draw background
+        self.screen.blit(self.map.image, self.camera.apply_rect(self.map.rect))
+        
+        # Draw grid
+        self.draw_grid()
+        
+        # Draw sprites
+        for sprite in self.all_sprites:
+            self.screen.blit(sprite.image, self.camera.apply(sprite))
+        
+        pg.display.flip()
+
+    def draw_grid(self):
+        for x in range(0, WIDTH, TILESIZE):
+            pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, HEIGHT))
+        for y in range(0, HEIGHT, TILESIZE):
+            pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
+
+    def quit(self):
+        pg.quit()
+        sys.exit()
 
     def draw_text(self, text, size, color, x, y) :
         font = pg.font.Font(self. font_name, size)
