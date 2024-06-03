@@ -118,6 +118,14 @@ class Game:
         for y in range(0, HEIGHT, TILESIZE):
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
 
+    def load_image(self, file, alpha):
+        """loads an image, prepares it for play"""
+        try:
+            surface = pg.image.load(file)
+        except pg.error:
+            raise SystemExit(f'Could not load image "{file}" {pg.get_error()}')
+        return surface.convert_alpha() if alpha else surface.convert()
+    
     def quit(self):
         pg.quit()
         sys.exit()
